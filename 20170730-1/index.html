@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Error</title>
+</head>
+<body>
+<script>
+    try{
+        var age = 5;
+        if(age == 5){
+            throw new Error("Error!");
+        }
+    }catch(e){
+        document.write("Error Message:"+e.message+"<br/>");
+    } finally {
+        document.write("finally<br/>");
+    }
+
+</script>
+</body>
+</html>
