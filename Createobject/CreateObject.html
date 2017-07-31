@@ -4,12 +4,52 @@
   <meta charset="UTF-8">
   <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>CreateObject</title>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Create Object</title>
 </head>
 <body>
   <script>
-    
+//    function student(name,age) {
+//        this.name = name;
+//        this.age = age;
+//        student.gender = "Male";
+//        this.info = function () {
+//            document.write("Name: "+this.name+" Age: "+this.age+" Gender:"+student.gender);
+//        }
+//    }
+//    var s1 = new student("Mr Mike",45);
+//    s1.info();
+
+//    var student = new Object();
+//    student.name = "Mr Smith";
+//    student.age = 35;
+//    student.info = function () {
+//        document.write("Name: "+this.name+" Age: "+this.age);
+//    }
+//    student.info();
+
+//    JSON
+    var person = {
+        "name":"Mr Smith",
+        "age":30,
+        "son":[
+            {
+                "name":"Jack",
+                "age":10
+            },
+            {
+                "name":"Rooth",
+                "age":12
+            }
+        ],
+        "info":function () {
+            document.write("Fathher Name: "+this.name+" Age: "+this.age+"<br/>");
+            for(var child in this.son){
+                document.write(child+"child:"+"<br/>"+this.son[child].name+"<br/>"+this.son[child].age+"<br/><br/>")
+            }
+        }
+    };
+    person.info();
   </script>
 </body>
 </html>
