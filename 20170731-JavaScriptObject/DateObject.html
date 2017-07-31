@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Date Object</title>
+</head>
+<body>
+    <script>
+//        var d1 = new Date();
+//        document.write(d1.toString()+'<br/>');
+//        var d2 = new Date("2017-07-31 13:05:08");
+//        document.write(d2.toString()+'<br/>');
+//        var d3 = new Date("2017,07,31");
+//        document.write(d3.toString()+'<br/>');
+
+        var d = new Date();
+        d.setFullYear(2018);
+        d.setMonth(3);
+        d.setDate(28);
+        var year = d.getFullYear();
+        var month = d.getMonth()+1;
+        var date = d.getDate();
+        var day = d.getDay();
+
+        switch(day){
+            case 0:
+                day = "Sunday";
+                break;
+            case 1:
+                day = "Monday";
+                break;
+            case 2:
+                day = "Tuesday";
+                break;
+            case 3:
+                day = "Wednesday";
+                break;
+            case 4:
+                day = "Thursday";
+                break;
+            case 5:
+                day = "Friday";
+                break;
+            case 6:
+                day = "Saturday";
+                break;
+            default:
+                day = "Error Date";
+                break;
+        }
+        document.write("Today is "+year+" - "+month+" - "+date+" "+day);
+
+    </script>
+</body>
+</html>
