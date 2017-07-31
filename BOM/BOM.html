@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>BOM</title>
+</head>
+<body>
+  <input type="button" value="confirm" onclick="testConfirm()"/>
+  <input type="button" value="prompt" onclick="testprompt()"/>
+  <input type="button" value="moveBy" onclick="testmoveBy()"/>
+  <input type="button" value="moveTo" onclick="testmoveTo()"/>
+  <input type="button" value="resizeBy" onclick="testresizeBy()"/>
+  <input type="button" value="resizeTo" onclick="testresizeTo()"/>
+  <input type="button" value="scrollBy" onclick="testscrollBy()"/>
+  <input type="button" value="scrollTo" onclick="testscrollTo()"/>
+  <input type="button" value="open" onclick="testOpen()"/>
+
+  <div id="display">
+
+  </div>
+
+
+  <script>
+    function testConfirm() {
+        var ans = window.confirm("Reall Close?");
+        if (ans){
+            window.close();
+        }else {
+            window.alert(":-)");
+        }
+    }
+    function testprompt() {
+        var res = window.prompt("Pls input password","");
+        alert(res);
+    }
+    function testmoveBy() {
+        window.moveBy(50,40);
+    }
+    function testmoveTo() {
+        window.moveTo(250,240);
+    }
+    function testresizeBy() {
+        window.resizeBy(50,40);
+    }
+    function testresizeTo() {
+        window.resizeTo(50,40);
+    }
+    function testscrollBy() {
+        window.scrollBy(50,40);
+    }
+    function testscrollTo() {
+        window.scrollTo(150,140);
+    }
+    function testOpen() {
+        window.open("http://www.baidu.us","buS","toolbar=no");
+    }
+
+    //Interval
+    var count = 0;
+    function showTime() {
+        var d = new Date();
+        var hour = d.getHours();
+        if(hour<10){
+            hour = "0"+hour;
+        }
+        var minutes = d.getMinutes();
+        if(minutes<10){
+            minutes = "0"+minutes;
+        }
+        var seconds = d.getSeconds();
+        if(seconds<10){
+            seconds = "0"+seconds;
+        }
+        count++;
+        if (count == 10){
+            window.clearInterval(t);
+        }
+        document.getElementById("display").innerHTML=hour+":"+minutes+":"+seconds;
+    }
+    var t = window.setInterval("showTime()",1000);
+  </script>
+</body>
+</html>
