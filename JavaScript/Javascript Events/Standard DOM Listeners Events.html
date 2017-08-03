@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Standard DOM Listeners Events</title>
+</head>
+<body>
+<input type="button" value="test1" id="test1" onclick="test1()"/>
+<button type="button" id="test2"><b>test2</b></button>
+<script>
+    function show() {
+        alert("Hello chrome");
+    }
+    var myTest1=document.getElementById("test1");
+    var myTest2=document.getElementById("test2");
+    //给test1 按钮添加事件
+    myTest1.addEventListener("click",show,false);//false:冒泡型事件
+    //给test2 按钮添加点击事件：让test1取消监听事件
+    /*myTest2.onclick=function(){
+        test1.removeEventListener("click",show,false);
+    };*/
+    //给test2 按钮添加监听事件：让test1取消监听事件
+    myTest2.addEventListener("click",function () {
+        myTest1.removeEventListener("click",show,false);
+    },false);
+</script>
+</body>
+</html>

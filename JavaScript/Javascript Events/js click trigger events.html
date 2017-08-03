@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>js click trigger events</title>
+</head>
+<body>
+  <a href="http://www.baidu.com" onclick="return false">Click Me</a> //return false 阻止元素默认行为
+  <input type="button" value="test1" id="myTest1" onclick="test1()"/>
+  <button type="button" id="test2" onclick="test1()">test2</button>
+  <script>
+    function test1() {
+        alert("Bind HTML elements attribute");
+
+    }
+    function test2() {
+        alert("Bind DOM Object attribute");
+
+    }
+    document.getElementById("test2").onclick=test2;//注意不要加括号
+  </script>
+</body>
+</html>
