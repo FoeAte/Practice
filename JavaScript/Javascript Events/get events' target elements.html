@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>get events' target elements</title>
+</head>
+<body>
+  <img src="./02.jpg" alt="test" border="0"/>
+
+  <script>
+    function handle(oEvent) {
+        if (window.event){ //window.event为true时，表示是ie浏览器
+            oEvent = window.event;
+        }
+        var oTarget;
+        if(oEvent.srcElement){
+            oTarget = oEvent.srcElement;
+        }else {
+            oTarget = oEvent.target;
+        }
+        alert(oTarget.tagName);
+    }
+
+    document.getElementsByTagName("img")[0].onclick = handle;
+  </script>
+</body>
+</html>

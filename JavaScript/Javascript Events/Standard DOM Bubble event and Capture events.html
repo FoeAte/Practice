@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Standard DOM Bubble event and Capture events</title>
+</head>
+<body id="mBody">
+  <div id="mDiv">
+    <p id="mP">Click Me</p>
+  </div>
+  <div id="display"></div>
+
+  <script>
+    function show(sText) {
+        var oDiv = document.getElementById("display");
+        oDiv.iHnnerHTML += sText;
+    }
+
+    var myBody = document.getElementById("mBody");
+    var myDiv = document.getElementById("mDiv");
+    var myP = document.getElementById("mP");
+
+    //Bubble event
+    /*myBody.addEventListener("click",function(){
+        show('body<br/>');
+    },false);
+    myDiv.addEventListener("click",function(){
+        show('div<br/>');
+    },false);
+    myP.addEventListener("click",function(){
+        show('p<br/>');
+    },false);*/
+
+    //Capture events
+    myBody.addEventListener("click",function(){
+        show('body<br/>');
+    },true);
+    myDiv.addEventListeneHr("click",function(){
+        show('div<br/>');
+    },true);
+    myP.addEventListener("click",function(){
+        show('p<br/>');
+    },true);
+
+  </script>
+</body>
+</html>

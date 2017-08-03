@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Standard event stream</title>
+</head>
+<body onclick="show('body<br/>')">
+  <div onclick="show('div<br/>')">
+    <p onclick="show('p<br/>')">Click Me</p>
+  </div>
+  <div id="display"></div>
+
+  <script>
+    function show(sText) {
+        var oDiv = document.getElementById("display");
+        oDiv.innerHTML+=sText;
+    }
+  </script>
+</body>
+</html>
