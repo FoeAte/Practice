@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>index</title>
+  <script type="text/javascript" src="./scripts/jquery-3.2.1.js"></script>
+  <script>
+    /*jQuery(document).ready(function () {
+        var span = document.getElementById("show").firstChild.nextSibling;
+        alert(span.innerHTML);
+    });*/
+
+    /*$(document).ready(function () {
+        var span = document.getElementById("show").firstChild.nextSibling;
+        alert(span.innerHTML);
+    });*/
+
+    /*$(function () {
+        var span = document.getElementById("show").firstChild.nextSibling;
+        alert(span.innerHTML);
+    });*/
+
+    /*$(function () {
+        var span = document.getElementById("show").firstChild.nextSibling;
+        alert($(span).html());
+    });*/
+
+    /*$(function () {
+        var $span = $("span");
+        alert($span.html());
+    })*/
+
+    $(function () {
+        var $span = $("span");
+        alert($span[1].innerHTML);
+//        alert($span.get(1).innerHTML);
+    })
+
+
+  </script>
+</head>
+<body>
+<div id="show">
+  <span>Text1</span>
+  <span>Text2</span>
+  <span>Text3</span>
+</div>
+</body>
+</html>
